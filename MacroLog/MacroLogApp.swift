@@ -4,18 +4,19 @@
 //
 //  Created by Sumangala Rao on 23/9/2026.
 //
-
 import SwiftUI
-import CoreData
 
 @main
 struct MacroLogApp: App {
-    let persistenceController = PersistenceController.shared
+
+    /// The Core Data stack is created once, here, and lives for the life of the
+    /// app. Screens will reach their data through a repository built on top of
+    /// it, which we wire up when we build the first screen.
+    private let store = NourishmentStore.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
