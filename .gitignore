@@ -1,0 +1,39 @@
+# Xcode / Swift .gitignore
+
+## User settings and window state
+xcuserdata/
+*.xcuserstate
+
+## macOS
+.DS_Store
+
+## Build output
+build/
+DerivedData/
+
+## Xcode project cruft
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Swift / Obj-C build artefacts
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Swift Package Manager
+.swiftpm/
+.build/
+
+## Others (harmless if unused)
+Pods/
+*.xcscmblueprint
+timeline.xctimeline
+playground.xcworkspace
