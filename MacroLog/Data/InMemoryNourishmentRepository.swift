@@ -1,9 +1,3 @@
-//
-//  InMemoryNourishmentRepository.swift
-//  MacroLog
-//
-//  Created by Sumangala Rao on 23/9/2026.
-//
 import Foundation
 
 /// An in-memory repository used by unit tests and SwiftUI previews.
