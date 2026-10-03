@@ -9,14 +9,18 @@ import SwiftUI
 @main
 struct MacroLogApp: App {
 
-    /// The Core Data stack is created once, here, and lives for the life of the
-    /// app. Screens will reach their data through a repository built on top of
-    /// it, which we wire up when we build the first screen.
-    private let store = NourishmentStore.shared
+    /// The composition root: the one place the real Core Data-backed repository
+    /// is created and handed to the UI. Swap this line for an in-memory
+    /// repository and the whole app would run on fake data, unchanged.
+    private let repository: NourishmentRepository
+
+    init() {
+        repository = CoreDataNourishmentRepository(context: NourishmentStore.shared.viewContext)
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(repository: repository)
         }
     }
 }

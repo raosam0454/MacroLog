@@ -1,3 +1,9 @@
+//
+//  NourishmentStore.swift
+//  MacroLog
+//
+//  Created by Sumangala Rao on 23/9/2026.
+//
 import CoreData
 
 /// The Core Data stack for MacroLog.

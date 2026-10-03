@@ -14,4 +14,15 @@
         <attribute name="maximumGlycaemicLoad" optional="NO" attributeType="Double" defaultValueString="100" usesScalarValueType="YES"/>
         <relationship name="meals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MealEntity" inverseName="day" inverseEntity="MealEntity"/>
     </entity>
+    <entity name="SymptomEntity" representedClassName="SymptomEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="kind" optional="NO" attributeType="String"/>
+        <attribute name="observedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="severity" optional="NO" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CycleMarkerEntity" representedClassName="CycleMarkerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="kind" optional="NO" attributeType="String"/>
+        <attribute name="markedOn" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
 </model>
