@@ -29,14 +29,15 @@ final class TodayViewModel {
     var loadSoFar: Int { Int(day.glycaemicLoadSoFar.value.rounded()) }
     var targetLoad: Int { Int(day.target.maximumGlycaemicLoad.rounded()) }
 
-    /// Reloads today from the repository. Called when the screen appears and
-    /// after anything changes the day.
+    /// Reloads today from the repository, then publishes a fresh snapshot so the
+    /// widget shows the same numbers the app does.
     func load() {
         do {
             day = try repository.day(on: Date())
         } catch {
             day = NourishmentDay(date: Date())
         }
+        WidgetSync.publish(day)
     }
 
     /// Removes a meal she swiped away, then refreshes.
