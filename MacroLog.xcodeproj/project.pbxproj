@@ -6,7 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		37533DDD3070976D00F043C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37533DDC3070976D00F043C9 /* WidgetKit.framework */; };
+		37533DDF3070976D00F043C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37533DDE3070976D00F043C9 /* SwiftUI.framework */; };
+		37533DEC3070976E00F043C9 /* MacroLogWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 37533DDA3070976C00F043C9 /* MacroLogWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		37533DEA3070976E00F043C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE2A29306362ED00F2BBDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37533DD93070976C00F043C9;
+			remoteInfo = MacroLogWidgetExtension;
+		};
 		37AE2A44306362F000F2BBDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37AE2A29306362ED00F2BBDF /* Project object */;
@@ -23,15 +36,63 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		37533DF13070976E00F043C9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				37533DEC3070976E00F043C9 /* MacroLogWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		37533DDA3070976C00F043C9 /* MacroLogWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacroLogWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		37533DDC3070976D00F043C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		37533DDE3070976D00F043C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		37533DF23070979F00F043C9 /* MacroLogWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacroLogWidgetExtension.entitlements; sourceTree = "<group>"; };
 		37AE2A31306362EE00F2BBDF /* MacroLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE2A43306362F000F2BBDF /* MacroLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE2A4D306362F000F2BBDF /* MacroLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		37533DED3070976E00F043C9 /* Exceptions for "MacroLogWidget" folder in "MacroLogWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 37533DD93070976C00F043C9 /* MacroLogWidgetExtension */;
+		};
+		37533DF43070980900F043C9 /* Exceptions for "MacroLog" folder in "MacroLogWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Support/AppGroup.swift,
+				Support/SnapshotStore.swift,
+				Support/TodaySnapshot.swift,
+			);
+			target = 37533DD93070976C00F043C9 /* MacroLogWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		37533DE03070976D00F043C9 /* MacroLogWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				37533DED3070976E00F043C9 /* Exceptions for "MacroLogWidget" folder in "MacroLogWidgetExtension" target */,
+			);
+			path = MacroLogWidget;
+			sourceTree = "<group>";
+		};
 		37AE2A33306362EE00F2BBDF /* MacroLog */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				37533DF43070980900F043C9 /* Exceptions for "MacroLog" folder in "MacroLogWidgetExtension" target */,
+			);
 			path = MacroLog;
 			sourceTree = "<group>";
 		};
@@ -48,6 +109,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		37533DD73070976C00F043C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37533DDF3070976D00F043C9 /* SwiftUI.framework in Frameworks */,
+				37533DDD3070976D00F043C9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37AE2A2E306362EE00F2BBDF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,12 +142,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37533DDB3070976D00F043C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37533DDC3070976D00F043C9 /* WidgetKit.framework */,
+				37533DDE3070976D00F043C9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		37AE2A28306362ED00F2BBDF = {
 			isa = PBXGroup;
 			children = (
+				37533DF23070979F00F043C9 /* MacroLogWidgetExtension.entitlements */,
 				37AE2A33306362EE00F2BBDF /* MacroLog */,
 				37AE2A46306362F000F2BBDF /* MacroLogTests */,
 				37AE2A50306362F000F2BBDF /* MacroLogUITests */,
+				37533DE03070976D00F043C9 /* MacroLogWidget */,
+				37533DDB3070976D00F043C9 /* Frameworks */,
 				37AE2A32306362EE00F2BBDF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +170,7 @@
 				37AE2A31306362EE00F2BBDF /* MacroLog.app */,
 				37AE2A43306362F000F2BBDF /* MacroLogTests.xctest */,
 				37AE2A4D306362F000F2BBDF /* MacroLogUITests.xctest */,
+				37533DDA3070976C00F043C9 /* MacroLogWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +178,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		37533DD93070976C00F043C9 /* MacroLogWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37533DEE3070976E00F043C9 /* Build configuration list for PBXNativeTarget "MacroLogWidgetExtension" */;
+			buildPhases = (
+				37533DD63070976C00F043C9 /* Sources */,
+				37533DD73070976C00F043C9 /* Frameworks */,
+				37533DD83070976C00F043C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				37533DE03070976D00F043C9 /* MacroLogWidget */,
+			);
+			name = MacroLogWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MacroLogWidgetExtension;
+			productReference = 37533DDA3070976C00F043C9 /* MacroLogWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		37AE2A30306362EE00F2BBDF /* MacroLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37AE2A57306362F000F2BBDF /* Build configuration list for PBXNativeTarget "MacroLog" */;
@@ -102,10 +207,12 @@
 				37AE2A2D306362EE00F2BBDF /* Sources */,
 				37AE2A2E306362EE00F2BBDF /* Frameworks */,
 				37AE2A2F306362EE00F2BBDF /* Resources */,
+				37533DF13070976E00F043C9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				37533DEB3070976E00F043C9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				37AE2A33306362EE00F2BBDF /* MacroLog */,
@@ -173,6 +280,9 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					37533DD93070976C00F043C9 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					37AE2A30306362EE00F2BBDF = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -203,11 +313,19 @@
 				37AE2A30306362EE00F2BBDF /* MacroLog */,
 				37AE2A42306362F000F2BBDF /* MacroLogTests */,
 				37AE2A4C306362F000F2BBDF /* MacroLogUITests */,
+				37533DD93070976C00F043C9 /* MacroLogWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		37533DD83070976C00F043C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37AE2A2F306362EE00F2BBDF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +350,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		37533DD63070976C00F043C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37AE2A2D306362EE00F2BBDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +381,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		37533DEB3070976E00F043C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37533DD93070976C00F043C9 /* MacroLogWidgetExtension */;
+			targetProxy = 37533DEA3070976E00F043C9 /* PBXContainerItemProxy */;
+		};
 		37AE2A45306362F000F2BBDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37AE2A30306362EE00F2BBDF /* MacroLog */;
@@ -269,6 +399,68 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		37533DEF3070976E00F043C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MacroLogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKAAPQ2VKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacroLogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacroLogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sam.rao.au.MacroLog.MacroLogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37533DF03070976E00F043C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MacroLogWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKAAPQ2VKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacroLogWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacroLogWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sam.rao.au.MacroLog.MacroLogWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		37AE2A55306362F000F2BBDF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -395,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacroLog/MacroLogRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JKAAPQ2VKD;
@@ -542,6 +735,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		37533DEE3070976E00F043C9 /* Build configuration list for PBXNativeTarget "MacroLogWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37533DEF3070976E00F043C9 /* Debug */,
+				37533DF03070976E00F043C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		37AE2A2C306362EE00F2BBDF /* Build configuration list for PBXProject "MacroLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
