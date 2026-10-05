@@ -6,8 +6,8 @@
 //
 import SwiftUI
 
-/// The History screen: the last few days at a glance, each marked as within or
-/// over its target, so patterns start to show.
+/// The History screen: a gentle meals-versus-symptoms pattern at the top, then
+/// the last few days at a glance, each marked as within or over its target.
 struct HistoryView: View {
 
     @State private var model: HistoryViewModel
@@ -18,15 +18,24 @@ struct HistoryView: View {
 
     var body: some View {
         List {
-            if model.days.isEmpty {
-                ContentUnavailableView(
-                    "No history yet",
-                    systemImage: "calendar",
-                    description: Text("Once you log meals across a few days, your recent days show up here.")
-                )
-            } else {
-                ForEach(model.days) { day in
-                    HistoryRow(day: day)
+            if let message = model.patternMessage {
+                Section("Recent patterns") {
+                    Text(message)
+                        .font(.callout)
+                }
+            }
+
+            Section {
+                if model.days.isEmpty {
+                    ContentUnavailableView(
+                        "No history yet",
+                        systemImage: "calendar",
+                        description: Text("Once you log meals across a few days, your recent days show up here.")
+                    )
+                } else {
+                    ForEach(model.days) { day in
+                        HistoryRow(day: day)
+                    }
                 }
             }
         }
