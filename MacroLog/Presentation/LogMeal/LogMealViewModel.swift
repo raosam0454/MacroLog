@@ -5,17 +5,19 @@
 //  Created by Sumangala Rao on 24/9/2026.
 //
 import Foundation
+import Observation
 
 /// The view model behind the Log a meal screen. It gathers what the woman types,
 /// hands it to `LogMealUseCase`, and if the use case refuses, turns the domain
-/// error into a sentence she can act on.
+/// error into a sentence she can act on. The meal name can be pre-filled, which
+/// is how a shared recipe arrives from the Share Extension.
 @MainActor
 @Observable
 final class LogMealViewModel {
 
     private let repository: NourishmentRepository
 
-    var name: String = ""
+    var name: String
     var occasion: MealOccasion = .breakfast
     var carbohydrateText: String = ""
     var glycaemicIndexBand: GlycaemicIndexBand = .low
@@ -24,8 +26,9 @@ final class LogMealViewModel {
     var errorMessage: String?
     private(set) var didSave = false
 
-    init(repository: NourishmentRepository) {
+    init(repository: NourishmentRepository, initialName: String = "") {
         self.repository = repository
+        self.name = initialName
     }
 
     func save() {

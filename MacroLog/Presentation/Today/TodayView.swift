@@ -6,13 +6,14 @@
 //
 import SwiftUI
 
-/// The home screen: how much low-GI budget is left today, and the meals logged
-/// so far. This is the first thing the woman sees when she opens MacroLog.
+/// The home screen: how much low-GI budget is left today, anything shared in
+/// waiting to be logged, and the meals logged so far.
 struct TodayView: View {
 
     private let repository: NourishmentRepository
     @State private var model: TodayViewModel
     @State private var isLoggingMeal = false
+    @State private var shareToLog: SharedItem?
 
     init(repository: NourishmentRepository) {
         self.repository = repository
@@ -23,6 +24,19 @@ struct TodayView: View {
         List {
             Section {
                 budgetHeader
+            }
+
+            if !model.pendingShares.isEmpty {
+                Section("Shared to log") {
+                    ForEach(model.pendingShares) { item in
+                        Button {
+                            shareToLog = item
+                        } label: {
+                            Label(item.text, systemImage: "tray.and.arrow.down")
+                                .lineLimit(2)
+                        }
+                    }
+                }
             }
 
             Section("Today's meals") {
@@ -61,6 +75,14 @@ struct TodayView: View {
         .sheet(isPresented: $isLoggingMeal) {
             NavigationStack {
                 LogMealView(repository: repository) {
+                    model.load()
+                }
+            }
+        }
+        .sheet(item: $shareToLog) { item in
+            NavigationStack {
+                LogMealView(repository: repository, initialName: item.text) {
+                    model.clearShare(item)
                     model.load()
                 }
             }

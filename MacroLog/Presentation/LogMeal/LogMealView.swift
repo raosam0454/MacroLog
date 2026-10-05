@@ -8,15 +8,16 @@ import SwiftUI
 
 /// The form for logging a meal. Every label is in the woman's vocabulary, and
 /// the date picker won't let her pick a time in the future, which matches the
-/// rule the use case enforces.
+/// rule the use case enforces. The name can arrive pre-filled from a shared
+/// recipe.
 struct LogMealView: View {
 
     @Environment(\.dismiss) private var dismiss
     @State private var model: LogMealViewModel
     private let onSaved: () -> Void
 
-    init(repository: NourishmentRepository, onSaved: @escaping () -> Void) {
-        _model = State(initialValue: LogMealViewModel(repository: repository))
+    init(repository: NourishmentRepository, initialName: String = "", onSaved: @escaping () -> Void) {
+        _model = State(initialValue: LogMealViewModel(repository: repository, initialName: initialName))
         self.onSaved = onSaved
     }
 
