@@ -1,12 +1,27 @@
 # MacroLog
 
-A low-GI nutrition and symptom companion for women managing PCOS.
+A low-GI nutrition and symptom companion for women managing PCOS (recently renamed as PMOS).
 
 MacroLog helps someone who has been advised to manage insulin resistance through
 a low-glycaemic-index diet keep track of what she eats, how she feels, and where
 she is in her cycle, and then shows her the one thing those three streams are
 meant to reveal together: whether her symptoms line up with the days she goes
 over her low-GI budget.
+
+
+## Project structure
+
+```
+MacroLog/
+  Domain/         semantic domain models (value types, no frameworks)
+  Data/           repository protocol, Core Data + in-memory implementations, mappings
+  UseCases/       business operations with typed domain errors
+  Presentation/   SwiftUI screens and their view models, by feature
+  Support/        app group identifier, shared snapshot and inbox stores
+MacroLogWidget/   WidgetKit widget
+MacroLogShare/    Share Extension
+MacroLogTests/    unit tests
+```
 
 ## Domain context
 
@@ -53,7 +68,7 @@ typed error written for the person, not the developer. The repository is a
 protocol so the real Core Data implementation can be swapped for an in-memory
 one in tests.
 
-## Extensions
+## Extensions added -
 
 **Home and Lock Screen widget.** Before she eats, the woman wants to see how much
 low-GI budget she has left today without unlocking her phone and opening the app.
@@ -74,7 +89,7 @@ Both extensions communicate with the app only through the shared App Group
 container: the app writes a today snapshot and reads the share inbox; the widget
 reads the snapshot; the share extension writes to the inbox.
 
-## Database
+## Database choosen -
 
 MacroLog uses **Core Data**, not CloudKit. The data is personal reproductive and
 dietary health information, so it should stay private and on-device by default
@@ -88,7 +103,7 @@ which is not a trade this app wants to make.
 The store lives in the App Group container so the widget can read the same
 database the app writes.
 
-## App Group identifier
+## App Group identifier -
 
 ```
 group.com.sam.macrolog
@@ -96,7 +111,7 @@ group.com.sam.macrolog
 
 Used by the app, the widget extension, and the share extension.
 
-## Getting started
+## Getting started / Setup - 
 
 Requirements: Xcode 16 or later, iOS 17 or later.
 
@@ -117,16 +132,3 @@ are fast and leave nothing behind. Run them with `Cmd + U`. Coverage spans the
 use cases and the repository layer, including happy paths, boundary conditions,
 and domain error cases.
 
-## Project structure
-
-```
-MacroLog/
-  Domain/         semantic domain models (value types, no frameworks)
-  Data/           repository protocol, Core Data + in-memory implementations, mappings
-  UseCases/       business operations with typed domain errors
-  Presentation/   SwiftUI screens and their view models, by feature
-  Support/        app group identifier, shared snapshot and inbox stores
-MacroLogWidget/   WidgetKit widget
-MacroLogShare/    Share Extension
-MacroLogTests/    unit tests
-```
