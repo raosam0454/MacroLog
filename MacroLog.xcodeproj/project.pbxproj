@@ -65,6 +65,7 @@
 		37533DDE3070976D00F043C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		37533DF23070979F00F043C9 /* MacroLogWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacroLogWidgetExtension.entitlements; sourceTree = "<group>"; };
 		37533E7F3070ABF800F043C9 /* MacroLogShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacroLogShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		37533F353073CEE600F043C9 /* MacroLog.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MacroLog.xctestplan; sourceTree = "<group>"; };
 		37AE2A31306362EE00F2BBDF /* MacroLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE2A43306362F000F2BBDF /* MacroLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE2A4D306362F000F2BBDF /* MacroLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +197,7 @@
 		37AE2A28306362ED00F2BBDF = {
 			isa = PBXGroup;
 			children = (
+				37533F353073CEE600F043C9 /* MacroLog.xctestplan */,
 				37533DF23070979F00F043C9 /* MacroLogWidgetExtension.entitlements */,
 				37AE2A33306362EE00F2BBDF /* MacroLog */,
 				37AE2A46306362F000F2BBDF /* MacroLogTests */,

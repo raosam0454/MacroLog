@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "11528534-C8C8-484F-9B49-588590748A99",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MacroLog.xcodeproj",
+      "identifier" : "37AE2A30306362EE00F2BBDF",
+      "name" : "MacroLog"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MacroLog.xcodeproj",
+        "identifier" : "37AE2A42306362F000F2BBDF",
+        "name" : "MacroLogTests"
+      }
+    }
+  ],
+  "version" : 1
+}
